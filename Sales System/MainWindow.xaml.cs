@@ -21,18 +21,21 @@ namespace Sales_System
 	public partial class MainWindow : Window
 	{
 		//public List<Item> Basket = new List<Item>();
-		public Basket basket = new Basket();
 		public MainWindow()
 		{
 			InitializeComponent();
-			Item item = new Item("Shirt");
-			Item item2 = new Item("Pants");
-			basket.AddItem(item);
-			basket.AddItem(item2);
+		}
 
+		private void ScannerButton_Click(object sender, RoutedEventArgs e)
+		{
+			Window scannerWindow = new Scanner();
+			scannerWindow.Show();
+		}
 
-			DataContext = basket;
-			basketView.ItemsSource = basket.basketContents;
+		private void HistoryButton_Click(object sender, RoutedEventArgs e)
+		{
+			Window historyWindow = new History();
+			historyWindow.Show();
 		}
 	}
 }
